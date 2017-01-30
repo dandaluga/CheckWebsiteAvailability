@@ -23,6 +23,8 @@ print "Content-Type: text/html \n\n";
 if ($response->is_success) {
     #print $response->content;
     print "Connection established for: $host";
+    print "<br/>";
+    print "Connection status is: " . $response->status_line;
 } else {
     print "Connection failed for: $host";
     print "<br/>";
