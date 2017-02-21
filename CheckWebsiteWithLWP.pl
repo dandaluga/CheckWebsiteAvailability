@@ -39,6 +39,7 @@ if ($response->is_success) {
             print "<br/>" ;
             #print "Redirect -> " . $url->base;
             print "Redirect -> " . $url->request->uri;
+            print $url->request->uri . " -> " . $url->redirects;
             #print "Redirect -> " . $url->request->uri . " the HTTP status is " . $url->code;
             if (index($url->request->uri, "https://") != -1) {
                 $found_an_https_redirect = 1;
@@ -46,7 +47,7 @@ if ($response->is_success) {
         };
         print "<br/>";
         print "<br/>";
-        print "Final Destination -> " . $response->request->uri . "the HTTP statis is " . $response->code;
+        print "Final Destination -> " . $response->request->uri . "the HTTP status is " . $response->code;
         print "<br/>";
         print "<br/>";
         if ($found_an_https_redirect) {
